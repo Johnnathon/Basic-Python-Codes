@@ -1,0 +1,22 @@
+from pyfiglet import Figlet
+import random
+import sys
+
+figlet = Figlet()
+valid_fonts = []
+for f in figlet.getFonts():
+    valid_fonts.append(f)
+if len(sys.argv) < 2:
+    i = len(valid_fonts)
+    number = random.randint(0, i - 1)
+    f = valid_fonts[number]
+    figlet.setFont(font=f)
+else:
+    f = str(sys.argv[1])
+
+    if f not in valid_fonts:
+        sys.exit("not valid font")
+    figlet.setFont(font=f)
+s = input("Input: ")
+
+print(figlet.renderText(s))

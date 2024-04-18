@@ -1,0 +1,10 @@
+import random
+print("Welcome to the dice rolling simulator")
+
+while True:
+    sides = input("What sided die would you like to roll? (type q to quit) ")
+    result = random.randrange(1, int(sides) + 1)
+    print(result)
+    if sides.lower() == 'q':
+        break
+        quit()

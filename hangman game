@@ -1,0 +1,68 @@
+import random
+
+print('welcome to hangman!')
+
+with open('hangman_word_list') as f:
+    words = f.readlines()
+words_list = []
+for x in words:
+    words_list.append(x.strip('\n'))
+
+number = random.randint(0, 853)
+random_word = words_list[number]
+
+print("Let's get started!")
+
+unguessed = []
+for x in random_word:
+    unguessed.append("_")
+for x in unguessed:
+    print(x)
+
+hangman_number = 0
+hangman = ""
+boo = True
+while boo == True:
+    guess = input("Choose a letter ")
+
+    if guess in random_word:
+        for x in random_word:
+            if x  == guess:
+                index_letter = random_word.index(x)
+                unguessed[index_letter] = x
+    else:
+        hangman_number+=1
+
+    for x in unguessed:
+        print(x) 
+
+    if "_" not in unguessed:
+        print("You win!")
+        boo = True
+        quit()
+
+
+    if hangman_number == 1:
+        print (" 0 ")
+    elif hangman_number == 2:
+        print (" 0 ")
+        print (" | ")
+    elif hangman_number == 3:
+        print (" 0 ")
+        print (" |-")
+    elif hangman_number == 4:
+        print (" 0 ")
+        print ("-|-")
+    elif hangman_number == 5:
+        print (" 0 ")
+        print ("-|-")
+        print ("||")
+    elif hangman_number == 6:
+        print (" 0 ")
+        print ("-|-")
+        print ("||")
+        print("You lose.")
+        boo = False
+        quit()
+
+    

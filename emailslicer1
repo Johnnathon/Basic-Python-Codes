@@ -1,0 +1,8 @@
+email_slice = input('What is your email? ').strip()
+
+username = email_slice[:email_slice.index('@')]
+domain = email_slice[email_slice.index('@') + 1:]
+
+print("Your username is", username, "and your domain is", domain)
+
+

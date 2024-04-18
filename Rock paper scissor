@@ -1,0 +1,38 @@
+import random
+
+print("Welcome to Rock Paper Scissors!")
+
+while True:
+    enter = input("Please type y to begin ").lower()
+
+    if enter == 'y':
+        print('Begin!')
+        break
+    else:
+        print("Enter a valid value")
+        continue
+        
+player_score = 0
+computer_score = 0 
+
+game = ['rock', 'paper' , 'scissors']
+
+while True:
+    computer_input = random.choice(game)
+    
+    user_input = input("Please type Rock/Paper/Scissors, or Q for quit. ").lower()
+    if user_input == 'q':
+        break
+    elif user_input == 'rock':
+        print('rock')
+        continue
+    elif user_input == 'paper':
+        print('paper')
+        continue
+    elif user_input == 'scissors':
+        print('scissors')
+        continue
+
+
+
+    print('Thanks for playing!')
